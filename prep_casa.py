@@ -20,4 +20,4 @@ def prep_casa_excel(x, y):
 
     df_casalar = pd.DataFrame.from_dict(casalar, orient="index")
     df_casalar.to_excel(y+".xls", sheet_name="Sayfa1", index=True)
-    print(f"Dosya {y+'xls'} adıyla oluşturuldu. ")
+    print(f"Dosya {y+'xls'} adıyla oluşturuldu.")
