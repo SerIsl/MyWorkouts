@@ -21,7 +21,7 @@ def prep_casa_excel():
                 casalar[sandik["SANDIK NO"]]["Adet"] += "VbCr" + str(sandik["ADET"])
 
     df_casalar = pd.DataFrame.from_dict(casalar, orient="index")
-    df_casalar.to_excel(y+".xls", sheet_name="Sayfa1", index=True)
-    print(f"Dosya {y+'xls'} adıyla oluşturuldu.")
+    df_casalar.to_excel(y+".xlsx", sheet_name="Sayfa1", index=True)
+    print(f"Dosya {y+'xlsx'} adıyla oluşturuldu.")
 
 prep_casa_excel()
