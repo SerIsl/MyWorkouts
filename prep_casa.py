@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 
-def prep_casa_excel(x, y):
+def prep_casa_excel():
     x = input("Dosya yolunu girin: ")
     y = input("Oluşacak yeni dosyanın adını girin: ")
     df_casa = pd.read_excel(x)
@@ -21,3 +21,5 @@ def prep_casa_excel(x, y):
     df_casalar = pd.DataFrame.from_dict(casalar, orient="index")
     df_casalar.to_excel(y+".xls", sheet_name="Sayfa1", index=True)
     print(f"Dosya {y+'xls'} adıyla oluşturuldu.")
+
+prep_casa_excel()
