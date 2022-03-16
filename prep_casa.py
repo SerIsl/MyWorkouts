@@ -8,7 +8,7 @@ yol = os.getcwd()
 yollu = re.sub("\\\\", "/", yol)+"/"
 # print(yollu)
 
-def prep_casa_excel():
+def prep_casa_csv():
     x = input("Dosya yolunu girin: ")
     y = input("Oluşacak yeni dosyanın adını girin: ")
     df_casa = pd.read_excel(yollu+x, dtype=str)
@@ -28,4 +28,4 @@ def prep_casa_excel():
     df_casalar.to_csv(y+".csv", sep=";", index=True)
     print(f"Dosya {y+'.csv'} adıyla oluşturuldu.")
 
-prep_casa_excel()
+prep_casa_csv()
