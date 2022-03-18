@@ -40,7 +40,7 @@ def prep_casa_csv():
 
     df_casalar = pd.DataFrame.from_dict(casalar, orient="index")
     df_casalar.sort_index()
-    print(df_casalar)
+    # print(df_casalar)
     df_casalar.to_csv(y+".csv", sep=";", index=True)
     print(f"Dosya {y+'.csv'} adıyla oluşturuldu.")
 
