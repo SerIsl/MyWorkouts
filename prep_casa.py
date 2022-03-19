@@ -6,8 +6,9 @@ import os
 
 yol = os.getcwd()
 yollu = re.sub("\\\\", "/", yol)+"/"
+print(yollu)
 # print(yollu)
-x = yollu + "PR-220301 MS 1.xlsx"
+# x = yollu + "PR-220301 MS 1.xlsx"
 def prep_casa_csv():
     x = input("Dosya yolunu girin: ")
     y = input("Oluşacak yeni dosyanın adını girin: ")
