@@ -1,4 +1,3 @@
-from distutils.command.sdist import sdist
 import pandas as pd
 import numpy as np
 import xlwt
@@ -8,7 +7,7 @@ import os
 yol = os.getcwd()
 yollu = re.sub("\\\\", "/", yol)+"/"
 # print(yollu)
-X = yollu + "PR-220301 MS 1.xlsx"
+x = yollu + "PR-220301 MS 1.xlsx"
 def prep_casa_csv():
     x = input("Dosya yolunu girin: ")
     y = input("Oluşacak yeni dosyanın adını girin: ")
