@@ -32,7 +32,7 @@ def prep_casa_csv():
         a = casalar.pop(i)
         b = a["Ürün Adı"].split("VbCr")
         c = a["Adet"].split("VbCr")
-        if len(b)%10 == 0:
+        if len(b)%z == 0:
             sd = len(b)
         else:
             sd = len(b)+(z-(len(b)%z))
