@@ -28,15 +28,15 @@ def prep_casa_csv():
             casalar[sandik["SANDIK NO"]]["Ürün Adı"] += "VbCr" + str(sandik["ÜRÜN ADI İNGİLİZCE"])
             casalar[sandik["SANDIK NO"]]["Adet"] += "VbCr" + str(sandik["ADET"])
     for i in big_casas_list:
-       a = casalar.pop(i)
-       b = a["Ürün Adı"].split("VbCr")
-       c = a["Adet"].split("VbCr")
-       sd = len(b)+(10-(len(b)%10))
-       d = [i for i in range(0, sd, 10)]
-       counter = 1
-       for j in d:
-           casalar[i+f"-{counter}"] = {"Ürün Adı": "VbCr".join(b[j:j+10]), "Adet": "VbCr".join(c[j:j+10])}
-           counter += 1     
+        a = casalar.pop(i)
+        b = a["Ürün Adı"].split("VbCr")
+        c = a["Adet"].split("VbCr")
+        sd = len(b)+(10-(len(b)%10))
+        d = [i for i in range(0, sd, 10)]
+        counter = 1
+        for j in d:
+            casalar[i+f"-{counter}"] = {"Ürün Adı": "VbCr".join(b[j:j+10]), "Adet": "VbCr".join(c[j:j+10])}
+            counter += 1     
 
     df_casalar = pd.DataFrame.from_dict(casalar, orient="index")
     df_casalar.sort_index()
