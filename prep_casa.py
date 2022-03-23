@@ -43,10 +43,15 @@ def prep_casa_csv():
             counter += 1     
 
     df_casalar = pd.DataFrame.from_dict(casalar, orient="index")
-    inter=df_casalar.index.astype('int64')
-    inter.sort_values()
+    df_casalar['C'] = df_casalar.index
+    df_casalar['d'] = df_casalar['C'].str.extract(r'(\w)')
+    df_casalar['e'] = df_casalar['C'].str.extract(r'(\d+)').astype(int)
+    df_casalar['f'] = df_casalar['C'].str.extract(r'(?<=-)(\d+)').replace(np.nan, 0).astype(int)
+    df_casalar.sort_values(["d", "e", "f"], inplace=True)
+    df_casalar.drop(["C", "d", "e", "f"], axis=1, inplace=True)
+    
     # print(df_casalar)
     df_casalar.to_csv(y+".csv", sep=";", index=True)
-    print(f"Dosya {y+'.csv'} adıyla oluşturuldu.")
+    # print(f"Dosya {y+'.csv'} adıyla oluşturuldu.")
 
 prep_casa_csv()
