@@ -52,6 +52,6 @@ def prep_casa_csv():
     
     # print(df_casalar)
     df_casalar.to_csv(y+".csv", sep=";", index=True)
-    # print(f"Dosya {y+'.csv'} adıyla oluşturuldu.")
+    print(f"Dosya {y+'.csv'} adıyla oluşturuldu.")
 
 prep_casa_csv()
