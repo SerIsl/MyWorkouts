@@ -20,6 +20,7 @@ def prep_casa_csv():
     big_casas_list = [i for i, j in big_casas.items() if j > z]
     # print(big_casas_list)
     for index, sandik in df_casa_dict.items():
+        # print(index, sandik["ÜRÜN ADI İNGİLİZCE"])
         if sandik["SANDIK NO"] not in casalar.keys():
             temp_casa = {}
             temp_casa["Ürün Adı"] = sandik["ÜRÜN ADI İNGİLİZCE"]
