@@ -7,11 +7,21 @@ import os
 yol = os.getcwd()
 yollu = re.sub("\\\\", "/", yol)+"/"
 print(yollu)
+
+dosya_listesi = [] 
+
+for i in os.listdir(yol):
+    if i.endswith(".xlsx"):
+        dosya_listesi.append(i)
+        dosya_listesi.append(i[:-5])
+
+x, y = dosya_listesi
+
 # print(yollu)
 # x = yollu + "PR-220301 MS 1.xlsx"
 def prep_casa_csv():
-    x = input("Dosya yolunu girin: ")
-    y = input("Oluşacak yeni dosyanın adını girin: ")
+    # x = input("Dosya yolunu girin: ")
+    # y = input("Oluşacak yeni dosyanın adını girin: ")
     z = int(input("Lütfen sayfalanacak satır sayısını giriniz: "))
     df_casa = pd.read_excel(yollu + x, usecols=[0, 3, 4], dtype=str)
     kasa, urun, adet = df_casa.columns
