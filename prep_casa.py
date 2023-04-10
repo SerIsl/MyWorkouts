@@ -67,7 +67,7 @@ def prep_casa_csv():
     df_casalar.drop(["d", "e", "f"], axis=1, inplace=True)
     
     # print(df_casalar)
-    df_casalar.to_csv(y+".csv", sep=";")
+    df_casalar.to_csv(y+".csv", sep=";", index=False)
     print(f"Dosya {y+'.csv'} adıyla oluşturuldu.")
 
 prep_casa_csv()
