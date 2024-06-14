@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import xlwt
+#import xlwt
 import re
 import os
 
@@ -25,8 +25,9 @@ def prep_casa_csv():
     z = int(input("Lütfen sayfalanacak satır sayısını giriniz: "))
     df_casa = pd.read_excel(yollu + x, usecols=[0, 3, 4], dtype=str)
     kasa, urun, adet = df_casa.columns
-    liste= list(map(lambda x : "_" + x if x.isnumeric() else x.replace(" ", ""), df_casa[kasa].tolist()))
-    df_casa[kasa].update(pd.Series(liste))
+    # liste= list(map(lambda x : "_" + x if x.isnumeric() else x.replace(" ", ""), df_casa[kasa].tolist()))
+    # df_casa[kasa].update(pd.Series(liste))
+    df_casa[kasa] = ["_" + x if x.isnumeric() else x.replace(" ", "") for x in df_casa[kasa]]
     df_casa_dict = df_casa.to_dict("index")
     
 
@@ -67,7 +68,7 @@ def prep_casa_csv():
     df_casalar.drop(["d", "e", "f"], axis=1, inplace=True)
     
     # print(df_casalar)
-    df_casalar.to_csv(y+".csv", sep=";", index=False)
+    df_casalar[df_casalar.columns[::-1]].to_csv(y+".csv", sep=";", index=False)
     print(f"Dosya {y+'.csv'} adıyla oluşturuldu.")
 
 prep_casa_csv()
