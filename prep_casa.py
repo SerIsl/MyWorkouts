@@ -70,6 +70,6 @@ def prep_casa_csv():
     # print(df_casalar)
     df_casalar[df_casalar.columns[::-1]].to_csv(y+".csv", sep=";", index=False)
     print(f"Dosya {y+'.csv'} adıyla oluşturuldu.")
+    os.chdir("C:\\Users\\SERKAN\\Desktop")
 
 prep_casa_csv()
-os.chdir("C:\\Users\\SERKAN\\Desktop")
