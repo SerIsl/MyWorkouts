@@ -72,3 +72,4 @@ def prep_casa_csv():
     print(f"Dosya {y+'.csv'} adıyla oluşturuldu.")
 
 prep_casa_csv()
+os.chdir("C:\\Users\\SERKAN\\Desktop")
